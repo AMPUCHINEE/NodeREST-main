@@ -1,6 +1,7 @@
 const express = require('express');
 const Sequelize = require('sequelize');
 const app = express();
+const cors = require('cors');
 
 app.use(express.json());
 
@@ -94,3 +95,6 @@ app.delete('/books/:id',(req,res) => {
     
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+
+app.use(express.json());
+app.use(cors());
